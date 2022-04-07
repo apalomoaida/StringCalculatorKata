@@ -31,6 +31,11 @@ namespace StringCalculatorKata.Test {
         public void string_one_enter_two_comma_three_returns_number_six() {
             stringCalculator.Add("1\n2,3").Should().Be(6);
         }
+            
+        [Test]
+        public void double_slash_set_extra_delimiter() {
+            stringCalculator.Add("//;\n1;2").Should().Be(3);
+        }
         
     }
 }
