@@ -2,12 +2,17 @@
     public class StringCalculator {
 
         public int Add(string input) {
-            if (string.IsNullOrEmpty(input)) return 0;
-            
             var result = 0;
-            var numbers = input.Split(',', '\n');
+            if (string.IsNullOrEmpty(input)) return result;
+
+            if (input.Contains("//")) {
+                input = input.Substring(input.IndexOf("//") + 3);
+            }
+            var numbers = input.Split(',', '\n',';');
             foreach (var number in numbers) {
-                result += int.Parse(number);
+                if (number.Length > 0) {
+                    result += int.Parse(number);
+                }
             }
             return result;
         }
