@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StringCalculatorKata\StringCalculator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="FluentAssertions">
       <HintPath>dll\FluentAssertions.dll</HintPath>
     </Reference>
