@@ -27,5 +27,9 @@ namespace StringCalculatorKata.Test {
         public void string_separated_comma_returns_sum() {
             stringCalculator.Add("1,1,1,1").Should().Be(4);
         }
+        [Test]
+        public void string_one_enter_two_comma_three_returns_number_six() {
+            stringCalculator.Add("1\n2,3").Should().Be(4);
+        }
     }
 }
