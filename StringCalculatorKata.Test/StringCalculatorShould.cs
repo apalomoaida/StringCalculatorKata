@@ -12,5 +12,11 @@ namespace StringCalculatorKata.Test {
             StringCalculator stringCalculator = new StringCalculator();
             stringCalculator.Add("").Should().Be(0);
         }
+
+        [Test]
+        public void string_one_returns_number_one() {
+            StringCalculator stringCalculator = new StringCalculator();
+            stringCalculator.Add("1").Should().Be(1);
+        }
     }
 }
