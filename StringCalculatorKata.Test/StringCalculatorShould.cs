@@ -22,6 +22,10 @@ namespace StringCalculatorKata.Test {
         [Test]
         public void string_one_comma_two_returns_number_three() {
             stringCalculator.Add("1,2").Should().Be(3);
+        }     
+        [Test]
+        public void string_separated_comma_returns_sum() {
+            stringCalculator.Add("1,1,1,1").Should().Be(4);
         }
     }
 }
