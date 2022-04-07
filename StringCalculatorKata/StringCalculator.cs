@@ -8,6 +8,7 @@
             var result = 0;
             if (string.IsNullOrEmpty(number))
                 result = 0;
+            result += int.Parse(number);
             return result;
         }
     }
