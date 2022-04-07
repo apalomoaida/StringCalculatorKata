@@ -35,6 +35,10 @@ namespace StringCalculatorKata.Test {
         [Test]
         public void double_slash_set_extra_delimiter() {
             stringCalculator.Add("//;\n1;2").Should().Be(3);
+        }  
+        [Test]
+        public void negative_not_allowed() {
+            stringCalculator.Add("-1,-1").Should().Be(3);
         }
         
     }
