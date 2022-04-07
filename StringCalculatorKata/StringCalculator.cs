@@ -5,12 +5,12 @@
             var result = 0;
             if (string.IsNullOrEmpty(input)) return result;
 
-            var separators = new char[] { ',', '\n' };
+            var separators = new List<char> { ',', '\n' };
             if (input.Contains("//")) {
-                separators.ToList().Add(';');
+                separators.Add(';');
                 input = input.Substring(input.IndexOf("//") + 3);
             }
-            var numbers = input.Split(separators);
+            var numbers = input.Split(separators.ToArray());
             foreach (var number in numbers) {
                 if (number.Length > 0) {
                     result += int.Parse(number);
