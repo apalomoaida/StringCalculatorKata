@@ -1,8 +1,5 @@
 ﻿namespace StringCalculatorKata {
-    public class StringCalculator {
-        public StringCalculator() {
-
-        }
+    public class StringCalculator {        
 
         public int Add(string number) {
             var result = 0;
