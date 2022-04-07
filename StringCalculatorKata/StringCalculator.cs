@@ -5,7 +5,7 @@
             var result = 0;
             if (string.IsNullOrEmpty(input))
                 result = 0;
-            var numbers = input.Split(',');
+            var numbers = input.Split(',','\n');
             foreach (var number in numbers) {
                 result += int.Parse(number);
             }
