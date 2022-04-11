@@ -10,7 +10,15 @@
                 if (input.Contains("[") && input.Contains("]")) {
                     var customSeparator = input.Substring(3, input.IndexOf("]") - 3);
                     separators.Add(customSeparator);
-                    input = input.Replace("//[" + customSeparator + "]", "");
+                    input = input.Replace("//[" + customSeparator + "]", "");                    
+                    while (input.Contains("[")) {
+                        var start = input.IndexOf("[");
+                        var end = input.IndexOf("]");
+                        var separator = input.Substring(start + 1, end - start - 1);
+                        separators.Add(separator);
+                        input = input.Remove(start, end - start + 1);                        
+                    }
+                   
                 }
                 else {
 
