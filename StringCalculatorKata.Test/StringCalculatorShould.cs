@@ -59,7 +59,7 @@ namespace StringCalculatorKata.Test {
         }   
         [Test]
         public void ensure_multiple_separator_longChar_delimited() {
-            stringCalculator.Add("//[****][%%%]\n1*2%3").Should().Be(6);
+            stringCalculator.Add("//[****][%%%]\n1****2%%%3").Should().Be(6);
         }
 
     }
