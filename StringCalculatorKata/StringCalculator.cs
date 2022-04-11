@@ -4,14 +4,22 @@
         public int Add(string input) {
             var result = 0;
             if (string.IsNullOrEmpty(input)) return result;
-            var separators = new List<char> { ',', '\n' };
+            var separators = new List<string> { ",", "\n" };
 
             if (input.Contains("//")) {
-                separators.Add(input[2]);
+                if (input.Contains("[") && input.Contains("]")) {
+                    var customSeparator = input.Substring(3, input.IndexOf("]") - 3);
+                    separators.Add(customSeparator);
+                }
+                else {
+                    
+                    separators.Add(input[input.IndexOf("//") + 2].ToString());
+                }
+                separators.Add(input[2].ToString());
                 input = input.Substring(input.IndexOf("//") + 3);
             }
-            var numbers = input.Split(separators.ToArray());
-            var negativeNumbers = numbers.Where(n =>n.Contains("-")).ToList();
+            var numbers = input.Split(separators.ToArray(),StringSplitOptions.RemoveEmptyEntries);
+            var negativeNumbers = numbers.Where(n => n.Contains("-")).ToList();
             if (negativeNumbers.Any()) {
                 throw new Exception("Negatives not allowed: " + string.Join(",", negativeNumbers));
             }
