@@ -17,11 +17,9 @@
                         var separator = input.Substring(start + 1, end - start - 1);
                         separators.Add(separator);
                         input = input.Remove(start, end - start + 1);                        
-                    }
-                   
+                    }                   
                 }
                 else {
-
                     separators.Add(input[input.IndexOf("//") + 2].ToString());
                     input = input.Substring(input.IndexOf("//") + 3);
                 }
