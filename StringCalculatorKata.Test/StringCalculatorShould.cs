@@ -45,6 +45,10 @@ namespace StringCalculatorKata.Test {
 
             delete.Should().Throw<Exception>().And.Message.Should().Be("Negatives not allowed: -1,-1,-4");
         }
+        [Test]
+        public void greater_than_thousand_ignored() {
+            stringCalculator.Add("1,1000,2").Should().Be(3);
+        }
 
     }
 }
