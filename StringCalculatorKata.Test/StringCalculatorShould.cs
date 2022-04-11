@@ -47,7 +47,7 @@ namespace StringCalculatorKata.Test {
         }
         [Test]
         public void greater_than_thousand_ignored() {
-            stringCalculator.Add("1,1000,2").Should().Be(3);
+            stringCalculator.Add("1,1001,2").Should().Be(3);
         }
 
     }
