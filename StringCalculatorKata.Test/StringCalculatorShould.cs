@@ -51,7 +51,7 @@ namespace StringCalculatorKata.Test {
         } 
         [Test]
         public void separator_delimited() {
-            stringCalculator.Add("//[***]\n1***2***3,1001,2").Should().Be(6);
+            stringCalculator.Add("//[***]\n1***2***3").Should().Be(6);
         }
 
     }

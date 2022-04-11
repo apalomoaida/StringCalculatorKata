@@ -10,15 +10,15 @@
                 if (input.Contains("[") && input.Contains("]")) {
                     var customSeparator = input.Substring(3, input.IndexOf("]") - 3);
                     separators.Add(customSeparator);
+                    input = input.Replace("//[" + customSeparator + "]", "");
                 }
                 else {
-                    
+
                     separators.Add(input[input.IndexOf("//") + 2].ToString());
+                    input = input.Substring(input.IndexOf("//") + 3);
                 }
-                separators.Add(input[2].ToString());
-                input = input.Substring(input.IndexOf("//") + 3);
             }
-            var numbers = input.Split(separators.ToArray(),StringSplitOptions.RemoveEmptyEntries);
+            var numbers = input.Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
             var negativeNumbers = numbers.Where(n => n.Contains("-")).ToList();
             if (negativeNumbers.Any()) {
                 throw new Exception("Negatives not allowed: " + string.Join(",", negativeNumbers));
