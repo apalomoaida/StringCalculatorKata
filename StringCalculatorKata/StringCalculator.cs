@@ -11,11 +11,16 @@
                 input = input.Substring(input.IndexOf("//") + 3);
             }
             var numbers = input.Split(separators.ToArray());
+            var negativeNumbers = numbers.Where(n => int.Parse(n) < 0).ToList();
+            if (negativeNumbers.Any()) {
+                throw new Exception("Negatives not allowed: " + string.Join(",", negativeNumbers));
+            }
             foreach (var number in numbers) {
                 if (number.Length > 0) {
                     result += int.Parse(number);
                 }
             }
+            
             return result;
         }
     }
