@@ -48,6 +48,10 @@ namespace StringCalculatorKata.Test {
         [Test]
         public void greater_than_thousand_ignored() {
             stringCalculator.Add("1,1001,2").Should().Be(3);
+        } 
+        [Test]
+        public void separator_delimited() {
+            stringCalculator.Add("//[***]\n1***2***3,1001,2").Should().Be(6);
         }
 
     }

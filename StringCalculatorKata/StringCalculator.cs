@@ -16,8 +16,10 @@
                 throw new Exception("Negatives not allowed: " + string.Join(",", negativeNumbers));
             }
             foreach (var number in numbers) {
-                if (int.Parse(number) <= 1000)
-                    result += int.Parse(number);
+                if (number.Length > 0) {
+                    if (int.Parse(number) <= 1000)
+                        result += int.Parse(number);
+                }
             }
 
             return result;
